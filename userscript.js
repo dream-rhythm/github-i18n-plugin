@@ -13,8 +13,9 @@
 // @match               https://gist.github.com/*
 // @grant               GM_xmlhttpRequest
 // @grant               GM_getResourceText
-// @resource            zh-CN https://www.githubs.cn/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/zh-CN.json?v=20201119
-// @resource            ja https://www.githubs.cn/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/ja.json
+// @resource            zh-CN  https://raw.githubusercontent.com/dream-rhythm/github-i18n-plugin/master/locales/zh-CN.json
+// @resource            ja  https://raw.githubusercontent.com/dream-rhythm/github-i18n-plugin/master/locales/ja.json
+// @resource            ja https://raw.githubusercontent.com/dream-rhythm/github-i18n-plugin/master/locales/zh-TW.json
 // @require             https://cdn.bootcdn.net/ajax/libs/timeago.js/4.0.2/timeago.full.min.js
 // @require             https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js
 // ==/UserScript==
@@ -32,9 +33,9 @@
   watchUpdate();
 
   function getLocales(lang) {
-    if(lang.startsWith("zh")) { // zh zh-TW --> zh-CN
-      lang = "zh-CN";
-    }
+    // if(lang.startsWith("zh")) { // zh zh-TW --> zh-CN
+    //   lang = "zh-CN";
+    // }
     if(SUPPORT_LANG.includes(lang)) {
       return JSON.parse(GM_getResourceText(lang));
     }
